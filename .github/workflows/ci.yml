@@ -9,6 +9,8 @@ jobs:
         uses: actions/checkout@v6 # Action implemented in this repository, tag starting with "v6"
       - uses: actions/setup-java@v5 # Action implemented in repository "actions/setup-java" tag starting with "v5"
         with: # Actions parameters (action name omitted)
+          distribution: 'temurin' # Java distribution selection
+          cache: 'gradle' # Cache selection
           java-version: 25
       - name: Build
         run: ./gradlew check
